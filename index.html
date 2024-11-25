@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật</title>
+    <style>
+        body {
+            font-family: 'Arial', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff1e6;
+            overflow: hidden;
+        }
+
+        /* Hiệu ứng trái tim rơi */
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6b6b;
+            transform: rotate(45deg);
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+
+        /* Giao diện ngoài */
+        #outer-container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #b35900;
+            text-shadow: 2px 2px #ffcc99;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #804000;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            background-color: #ff6666;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #ff4d4d;
+            transform: scale(1.1);
+        }
+
+        /* Giao diện lá thư */
+        #letter-container {
+            display: none; /* Ẩn mặc định */
+            position: absolute; /* Đặt vị trí tuyệt đối để dễ căn chỉnh */
+            top: 50%; /* Căn chỉnh theo chiều dọc */
+            left: 50%; /* Căn chỉnh theo chiều ngang */
+            transform: translate(-50%, -50%); /* Dịch chuyển tâm phần tử ra giữa */
+            width: 90%; /* Chiều rộng tối đa */
+            max-width: 800px; /* Chiều rộng tối đa cố định */
+            background: #fff; /* Màu nền */
+            padding: 30px; /* Khoảng cách bên trong */
+            border-radius: 20px; /* Bo góc */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+            animation: fadeIn 2s ease; /* Hiệu ứng xuất hiện */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-header {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #b35900;
+            margin-bottom: 20px;
+        }
+
+        .letter-body {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .letter-signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #804000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hiệu ứng trái tim -->
+    <div class="heart" style="left: 20%; animation-duration: 4s;"></div>
+    <div class="heart" style="left: 40%; animation-duration: 5s;"></div>
+    <div class="heart" style="left: 60%; animation-duration: 6s;"></div>
+    <div class="heart" style="left: 80%; animation-duration: 7s;"></div>
+
+    <!-- Giao diện ngoài -->
+    <div id="outer-container">
+        <h1>Chúc Mừng Sinh Nhật Minh Thư</h1>
+        <p>Hôm nay là ngày đặc biệt! Nhấn nút bên dưới để xem điều bất ngờ dành cho em.</p>
+        <button class="button" onclick="showLetter()">Nhấn vào đây nè vợ</button>
+    </div>
+
+    <!-- Giao diện lá thư -->
+    <div id="letter-container">
+        <div class="letter-header">
+            Chúc Mừng Sinh Nhật Minh Thư
+        </div>
+        <div class="letter-body">
+            Gửi <strong>Minh Thư</strong>,<br><br>
+
+            Hôm nay là một ngày rất là đặc biệt, ngày mà công chúa của anh được sinh ra. Anh cóa vài lời muốn gửi tớii em ngày hôm nay ạ. :> <br>
+
+            Anh chúc em sẽ có 1 ngày sinh nhật thật vui vẻ. Mong em bé của anh tuổi mới càng ngày phải càng xinh đẹp hơn, càng ngày càng giỏi giang hơn và gặp được nhiều thành công trong cuộc sống nha. Anh sẽ cố gắng hong để vợ anh phải giận hay cáu nữa đâu mặc dù anh chơi game hơi gà hehe :)) <br>
+
+            Anh hy vọng rằng ngày hôm nay sẽ tràn đầy niềm vui, tình yêu, và những bất ngờ thú vị dành cho em. Hãy nhớ là dù ở bất cứ đâu, anh luôn yêu em và luôn ủng hộ mọi điều em làm. Anh yêu em rất là nhiều luôn ớ bé cưng ❤️<br>
+
+            Chúc em có một sinh nhật thật đáng nhớ, Minh Thư của anh!<br>
+
+
+            <div class="letter-signature">
+                Yêu em nhiều ❤️,<br>
+                Quý Lê
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+            // Ẩn giao diện ngoài, hiển thị thư
+            document.getElementById('outer-container').style.display = 'none';
+            document.getElementById('letter-container').style.display = 'block';
+
+            // Đổi màu nền
+            document.body.style.backgroundColor = '#fff1e6';
+        }
+    </script>
+</body>
+</html>
